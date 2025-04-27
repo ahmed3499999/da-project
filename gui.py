@@ -90,12 +90,12 @@ def draw_plots(plotfunc, include_num=False, include_cat=False):
     
 "### Detecting and handling outliers"
 "Before handling outlier"
-draw_plots(sns.boxplot)
+draw_plots(sns.boxplot, True, False)
     
 "After handling outlier for features"
 for c in num_col:
     detect_handling_outlier(c)
-draw_plots(sns.boxplot)
+draw_plots(sns.boxplot, True, False)
 
 "After handling outlier for labels"
 @st.cache_data
