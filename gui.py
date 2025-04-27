@@ -6,7 +6,7 @@ import seaborn as sns
 
 "# Predicting House price in california"
 "### Loading data"
-df = pd.read_csv(r"D:\Ai\files programming\python\projects\project DA\Houses.csv")
+df = pd.read_csv(r"Houses.csv")
 df
 "### Dropping unnecessary columns"
 "Id, Alley,MasVnrType, PoolQC, Fence, MiscFeature, FireplaceQu, GarageCond, GarageQual, GarageYrBlt,Utilities, MiscVal"
