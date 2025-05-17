@@ -108,6 +108,7 @@ with cat_tab:
         strategy = st.selectbox('Strategy for simple imputer', ['mode', 'const'])
         if strategy == 'mode':
             imputer = SimpleImputer(strategy='most_frequent')
+            cat_col
             df[cat_col.columns] = imputer.fit_transform(df[cat_col.columns])
             df[cat_col.columns]
         else: 
@@ -294,7 +295,7 @@ elif method == 'Train_test_split':
         x_test[[c]] = scaler.fit_transform(x_test[[c]])
     st.success("Succesfully scaled **feature** data")
     x_train[num_col.columns]
-    y_test_original = y_test
+
     y_train = scaler.fit_transform(y_train.values.reshape(-1, 1))
     y_test = scaler.transform(y_test.values.reshape(-1, 1))
     st.success("Succesfully scaled **label** data")
@@ -331,17 +332,5 @@ elif method == 'Train_test_split':
 
         report
 
-        y_test = scaler.inverse_transform(y_test)
-        m_pridect = scaler.inverse_transform(m_pridect.ravel().reshape(-1,1))
-        mse = mean_squared_error(y_test, m_pridect)
-        rmse = sqrt(mse)
-        mae = mean_absolute_error(y_test, m_pridect)
-        r2 = r2_score(y_test, m_pridect)
-        report = pd.DataFrame({
-            'Metric': ['Mean Squared Error', 'Root Mean Squared Error', 'Mean Absolute Error', 'R2 Score'],
-            'Value': [mse, rmse, mae, r2]
-        })
-
-        report
 
 
