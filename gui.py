@@ -108,7 +108,6 @@ with cat_tab:
         strategy = st.selectbox('Strategy for simple imputer', ['mode', 'const'])
         if strategy == 'mode':
             imputer = SimpleImputer(strategy='most_frequent')
-            cat_col
             df[cat_col.columns] = imputer.fit_transform(df[cat_col.columns])
             df[cat_col.columns]
         else: 
