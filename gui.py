@@ -15,9 +15,23 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import SimpleImputer, KNNImputer, IterativeImputer
 
+# preprocessing => bakr, shiekh
+# viz => sadanyyy
+# gui evaluation => hamoooda 
+# model k fold training/predict/selection => nasser
+# tea => ahmed elsheikh
+
+# GUI EDA FILE UPLOAD
+# visualization
+# imputing
+# encoding
+# normalization
+# evaluation
+# model train/predict/split
+# k fold
+ 
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
 "# Predicting House price "
-# st.title("Predicting House price ")
 file = st.file_uploader('Please select a dataset', type=['csv', 'xlsx', 'xls'])
 if file is None:
     st.stop()
@@ -116,7 +130,7 @@ with cat_tab:
                 imputer = SimpleImputer(strategy='constant', fill_value=value)
                 df[[col]] = imputer.fit_transform(df[[col]].values.reshape(-1, 1))
                 
-            df[cat_col.columns]
+                df[cat_col.columns]
     
 with num_tab:
     num_col = df.select_dtypes('number')
@@ -330,6 +344,3 @@ elif method == 'Train_test_split':
         })
 
         report
-
-
-
